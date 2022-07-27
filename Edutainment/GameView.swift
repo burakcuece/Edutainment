@@ -38,6 +38,7 @@ struct GameView: View {
                 .onChange(of: answer) { _ in
                     showResult = false
                 }
+                .padding()
             Button("Submit Answer!") {
                 questionsAsked += 1
                 
@@ -47,6 +48,7 @@ struct GameView: View {
                     numberOfCorrectAnswers += 1
                 }
             }
+            
             
             .alert(answerIsCorrect ? "Correct" : "Incorrect", isPresented: $showResult) {
                 Button("Continue") {
